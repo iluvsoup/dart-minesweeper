@@ -3,6 +3,12 @@
 ## Requirements:
 Dart
 
+## Getting started
+Install required packages with
+```bash
+dart pub get
+```
+
 ## Compile with
 ```bash
 dart compile jit-snapshot bin/minesweeper.dart -o dist/minesweeper.jit
