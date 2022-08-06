@@ -1,9 +1,9 @@
-#Command-line minesweeper tool I made in Dart
+# Command-line minesweeper tool I made in Dart
 
-##Requirements:
+## Requirements:
 Dart
 
-##Compile with
+## Compile with
 ```bash
 dart compile jit-snapshot bin/minesweeper.dart -o dist/minesweeper.jit
 ```
@@ -12,7 +12,7 @@ or
 dart compile aot-snapshot bin/minesweeper.dart -o dist/minesweeper.aot
 ```
 
-##Run with
+## Run with
 ```bash
 dart run dist/minesweeper.jit
 ```
