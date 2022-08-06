@@ -20,6 +20,10 @@ dart compile aot-snapshot bin/minesweeper.dart -o dist/minesweeper.aot
 
 ## Run with
 ```bash
+dart run
+```
+or
+```bash
 dart run dist/minesweeper.jit
 ```
 or
