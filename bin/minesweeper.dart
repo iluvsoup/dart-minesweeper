@@ -56,7 +56,6 @@ void main() {
   Console.hideCursor();
 
   Keyboard.bindKeys(controls).listen((key) {
-    print(key);
     handleInput(key);
   });
 
