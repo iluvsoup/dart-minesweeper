@@ -1,5 +1,8 @@
 # Command-line minesweeper tool I made in Dart
 
+## Todo (plz contribute):
+Make first cell that you mine always clear a large area
+
 ## Requirements:
 Dart
 
