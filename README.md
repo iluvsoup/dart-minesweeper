@@ -1,4 +1,4 @@
-# Command-line minesweeper tool I made in Dart
+# Command-line minesweeper tool I made in Dart to practice the languge
 
 ## Requirements:
 Dart
