@@ -10,8 +10,8 @@ import 'cell.dart';
 
 bool gameInProgress = false;
 
-int gridSizeX = 20;
-int gridSizeY = 20;
+int gridSizeX = 5;
+int gridSizeY = 5;
 
 double bombChance = 0.15; // 15% chance of any cell being a bomb
 
@@ -170,9 +170,9 @@ int getNumberOfSurroundingBombs(Cell cell) {
 List<Cell> getNeighbors(Cell cell) {
   List<Cell> neighbors = [];
 
-  for (var y = cell.y - 1; y <= cell.y + 1; y++) {
+  for (int y = cell.y - 1; y <= cell.y + 1; y++) {
     if (y < 0 || y > gridSizeY - 1) continue;
-    for (var x = cell.x - 1; x <= cell.x + 1; x++) {
+    for (int x = cell.x - 1; x <= cell.x + 1; x++) {
       if (x < 0 || x > gridSizeX - 1) continue;
       if (x == cell.x && y == cell.y) continue;
 
@@ -184,11 +184,26 @@ List<Cell> getNeighbors(Cell cell) {
   return neighbors;
 }
 
+void checkForVictory() {
+  for (int y = 0; y < gridSizeY; y++) {
+    for (int x = 0; x < gridSizeX; x++) {
+      var cell = cells[y]![x]!;
+      if (cell.type != 'bomb' && cell.hasMined == false) {
+        return;
+      }
+    }
+  }
+
+  victory();
+}
+
 void mine(Cell cell) {
   if (cell.hasMined) return;
 
   cell.hasMined = true;
   cell.isFlagged = false;
+
+  checkForVictory();
 
   var neighbors = getNeighbors(cell);
 
@@ -206,8 +221,8 @@ void gameOver() {
   stopwatch.stop();
   drawEvent!.cancel();
 
-  for (var y = 0; y < gridSizeY; y++) {
-    for (var x = 0; x < gridSizeX; x++) {
+  for (int y = 0; y < gridSizeY; y++) {
+    for (int x = 0; x < gridSizeX; x++) {
       var cell = cells[x]![y];
       if (cell!.type == 'bomb') {
         cell.hasMined = true;
