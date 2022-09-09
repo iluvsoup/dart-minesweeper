@@ -1,4 +1,7 @@
-# Command-line minesweeper tool I made in Dart to practice the languge
+# Command-line minesweeper tool I made in Dart to practice the language
+
+## Todo (plz contribute):
+Make first cell that you mine always clear a large area
 
 ## Requirements:
 Dart
