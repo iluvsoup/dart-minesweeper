@@ -10,8 +10,8 @@ import 'cell.dart';
 
 bool gameInProgress = false;
 
-int gridSizeX = 5;
-int gridSizeY = 5;
+int gridSizeY = 20;
+int gridSizeX = 20;
 
 double bombChance = 0.15; // 15% chance of any cell being a bomb
 
